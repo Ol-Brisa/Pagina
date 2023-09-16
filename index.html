@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>El Buen sabor</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+  <body>
+
+<style>
+ /* Botones tabla */
+ #btn-alta {
+  background-color: green;
+  color: white;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 3px;
+  font-size: 13px;
+}
+#btn-baja {
+  background-color:brown;
+  color: white;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 3px;
+  font-size: 13px;
+  
+}
+
+.btn{
+  background-color: #EFDECD;
+  color: black;
+}
+/* Boton agregar */
+.contenedor {
+    text-align: right; /* Alinea el contenido a la derecha */
+    padding: 50px;     /* Espacio alrededor del botón */
+}
+.boton {
+    padding: 5px 10px; /* Espacio interno del botón */
+    background-color:  #ED9121;
+; /* Color de fondo del botón */
+    color: #fff;       /* Color del texto del botón */
+    border: none;      /* Elimina el borde del botón */
+    border-radius: 5px; /* Añade esquinas redondeadas al botón */
+    cursor: pointer;   /* Cambia el cursor al pasar sobre el botón */
+}
+/*tabla*/
+.tabla-pr{
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* estilo segundo navbar*/
+.nav-tabs {
+    background-color: #FFF5EE !important;
+    border-radius: 10px;
+  }
+.nav-tabs .nav-link {
+    color: black !important;
+  }
+
+ /*--Botones Opciones*/
+  .nav-tabs .nav-link.active {
+    border-color: #ED9121 !important;
+  }
+  .btn-group{
+    color: white ; /* Color del texto por defecto */
+    background-color:#ED9121; /* Color de fondo por defecto */
+    
+  }
+ /*--boton cerrar modal*/
+ .boton-cerrar{
+  background-color: #C7483C;
+  
+ }
+ .boton-cerrar:hover {
+    background-color: #C7483C; /* Color de fondo al pasar el mouse */
+    transform: scale(1.1); /* Escala al pasar el mouse */
+  }
+
+ /*--boton Guardar modal*/
+
+ .boton-guardar{
+  background-color:  #ED9121;
+  
+ }
+ .boton-guardar:hover {
+    background-color: #ED9121; /* Color de fondo al pasar el mouse */
+    transform: scale(1.1); /* Escala al pasar el mouse */
+  }
+.btn-dropdown{
+  background-color: #EFDECD;
+  color: black;
+}
+/* Boton Agregar */
+.contenedor {
+    text-align: right; /* Alinea el contenido a la derecha */
+    padding: 20px;     /* Espacio alrededor del botón */
+    margin-left: 10px;
+    margin-right: 60px;
+}
+/* Boton de tabla lapiz*/
+.btn-editar{
+  background-color: transparent;
+  border: none;
+  border-radius: 2px;
+  width: 16px; 
+  height: 16px;
+}
+</style>
+<!--navbar-->
+    <nav class="navbar navbar-light" style="background-color: #EFDECD">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <img src="file:///C:/Users/brisa/Desktop/Desarrollo/Pagina/logo.svg" alt="Logo" width="50" height="50" class="d-inline-block align-text-center">
+            El Buen Sabor
+          </a>
+        </div>
+      </nav>
+
+<!-- Segundo navbar -->
+<div class="d-flex justify-content-center my-4">
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" aria-current="page" href="#">Principal</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Usuarios</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Rubros</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" aria-disabled="true">Stock</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" aria-disabled="true">Estadistica</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" aria-disabled="true">Movimientos Monetarios</a>
+    </li>
+  </ul>
+</div>
+<!--Botones Opciones-->
+<div class="d-flex justify-content-center ">
+  <div class="btn-group col-4 " role="group">
+    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+    <label class="btn " for="btnradio1">Productos</label>
+    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+    <label class="btn " for="btnradio2">Ingredientes</label>
+  </div>
+</div>
+<!--Modal agregar-->
+<div class="contenedor">
+<button  class="btn" style="background-color: #ED9121; color:white;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Agregar
+</button>
+</div>
+<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title"> Nuevo Rubro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="recipient-name" class="col-form-label">Nombre</label>
+          <input type="text" class="form-control" id="recipient-name">
+        </div>
+        <div class="mb-3">
+          <label for="recipient-name" class="col-form-label">Estado</label>
+          <input type="text" class="form-control" id="recipient-name">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn boton-cerrar" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn boton-guardar">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modar editar-->
+<div class="modal fade " id="exampleModa2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Editar Rubro</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="recipient-name" class="col-form-label">Nombre</label>
+          <input type="text" class="form-control" id="recipient-name">
+        </div>
+        <div class="mb-3">
+          <label for="recipient-name" class="col-form-label">Estado</label>
+          <input type="text" class="form-control" id="recipient-name">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn boton-cerrar" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn boton-guardar">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Tabla-->
+    <div class="container mb-3"class="table-responsive">
+      <table class="table table-hover table-bordered table-sm tabla-pr">
+        <thead>
+          <tr >
+            <th scope="col">Nombre</th>
+            <th scope="col">Estado</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          <tr class="align-bottom">
+            <td>Rubro1</td>
+            <td><button id="btn-alta">Alta</button></td>
+            <td>
+              <button class="btn-editar" data-bs-toggle="modal" data-bs-target="#exampleModa2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+              </svg>
+             
+              </button>
+            </td>
+          </tr class="align-bottom">
+          <tr>
+            
+            <td>Rubro2</td>
+            <td ><button id="btn-baja">Baja</button></td>
+            <td><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+              <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+            </svg><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+              <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+              <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+            </svg></td>
+          </tr>
+          <tr>
+            
+            <td>Rubro3</td>
+            <td ><button id="btn-baja">Baja</button></td>
+            <td><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+              <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+            </svg><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+              <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+              <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+            </svg></td>
+          </tr>
+          <tr>
+            
+            <td>Rubro4</td>
+            <td ><button id="btn-alta">Alta</button></td>
+            <td><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+              <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+            </svg><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+              <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+              <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+            </svg></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
